@@ -6,8 +6,6 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -43,8 +41,8 @@ class PagPrincipal : AppCompatActivity() {
                 .get()
                 .addOnSuccessListener { document ->
                     if (document != null && document.exists()) {
-                        var nombreT = document.getString("nombre")
-                        nombreT = "Nombre: $nombre"
+                        val nombreUsuario = document.getString("nombre")
+                        nombre.text = "Nombre: $nombreUsuario"
                     }
                 }
         } else {

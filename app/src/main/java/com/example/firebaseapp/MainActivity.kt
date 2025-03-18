@@ -2,7 +2,6 @@ package com.example.firebaseapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.webkit.WebStorage
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -15,8 +14,8 @@ import com.google.firebase.storage.FirebaseStorage
 class MainActivity : AppCompatActivity() {
 
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firestore:FirebaseFirestore
     private lateinit var firebaseStorage: FirebaseStorage
-    private lateinit var firestore: FirebaseFirestore
 
     private lateinit var email: EditText
     private lateinit var contraseña: EditText
@@ -29,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
+        firebaseStorage = FirebaseStorage.getInstance()
 
         email = findViewById(R.id.email)
         contraseña = findViewById(R.id.contraseña)
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun registrarUser() {
+    private fun loginUser() {
         val email = email.text.toString().trim()
         val password = contraseña.text.toString().trim()
 
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    private fun loginUser() {
+    private fun registrarUser() {
         val email = email.text.toString().trim()
         val password = contraseña.text.toString().trim()
 

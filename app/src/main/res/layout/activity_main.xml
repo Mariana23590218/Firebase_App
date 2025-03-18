@@ -25,7 +25,8 @@
             android:layout_height="50dp"
             android:ems="10"
             android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textColor="#000000" />
 
         <EditText
             android:id="@+id/contraseña"
@@ -33,7 +34,8 @@
             android:layout_height="50dp"
             android:ems="10"
             android:hint="Contraseña"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="#040404" />
 
         <Space
             android:layout_width="match_parent"
